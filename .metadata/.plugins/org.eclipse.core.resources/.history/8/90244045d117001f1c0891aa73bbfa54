@@ -1,0 +1,32 @@
+package com.example.demo.optional;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+public class OptionalTest {
+	
+//		단위테스트시 테스트가 잘 안될 경우  @SpringBootTest / @Test 부터 확인요망
+//		Optional : 값을 감싸고 있는 wrapper클래스 (상자가있고 값이 담겨있는 -> optional 상자 안에 객체가 담겨있는)
+//		객체에 값이 있는지 없는지를 확인하기 위해 사용
+	
+	@Test
+	void Optional사용하기() {
+		String str = "apple";
+		Optional<String> opt = Optional.of(str);
+//		옵셔널안에 애플이란 클래스 감싸져있어요
+		
+		
+		System.out.println("Optional에서 값 꺼내기 : " + opt.get());		//box안에 apple value꺼내요
+		System.out.println("Optional에서 값 없는지? : " + opt.isEmpty());
+		System.out.println("Optional에서 값 있는지? : " + opt.isPresent());
+		
+//		Optional에 값이 없으면, 바나나로 대체
+		String str2 = null;
+		System.out.println(Optional.ofNullable(str2).orElse("banana"));
+	}
+	
+	
+}
