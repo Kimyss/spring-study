@@ -1,0 +1,28 @@
+package com.example.demo.repository;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.entity.Memo;
+
+@SpringBootTest
+public class MemoRepositoryTest2 {
+	
+	@Autowired
+	MemoRepository2 memoRepository2;
+	
+	@Test
+	public void 번호가10과20사이인_메모검색() {
+		List<Memo> list = memoRepository2.findByNoBetween(10, 20);
+		
+		for(Memo memo : list) {
+			System.out.println(memo);
+		}
+	}
+	
+	
+
+}
