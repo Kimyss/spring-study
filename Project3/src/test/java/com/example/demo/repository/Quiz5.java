@@ -33,10 +33,33 @@ public class Quiz5 {
 	}
 	
 	@Test
-	public void 한빛이지스() {
+	public void 한빛_이지스() {
 		List<Book> list = bookRepository.get3("한빛출판사", "이지스퍼블리싱");
 		for(Book publ : list) {
 			System.out.println(publ);
+		}
+	}
+	@Test
+	public void 제목이_자바프로그래밍입문인_책검색_JPQL() {
+		List<Book> list = bookRepository.get4("자바프로그래밍입문");
+		for(Book book : list) {
+			System.out.println(book);
+		}
+	}
+
+	@Test
+	public void 가격이_3만원이상이고_출판사가_남가람북스인_책검색_JPQL() {
+		List<Book> list = bookRepository.get5(30000,"남가람북스");
+		for(Book book : list) {
+			System.out.println(book);
+		}
+	}
+
+	@Test
+	public void 출판사가_한빛출판사_또는_이지스퍼블리싱인_책검색_JPQL() {
+		List<Book> list = bookRepository.get6("한빛출판사","이지스퍼블리싱");
+		for(Book book : list) {
+			System.out.println(book);
 		}
 	}
 				
