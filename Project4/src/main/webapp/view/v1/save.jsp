@@ -1,8 +1,8 @@
 <%@page import="com.example.demo.domain.MemberRepository"%>
 <%@page import="com.example.demo.domain.Member"%>
 
-<%@ page language="java" contentType="text/html; charset=UTf-8"
-	pageEncoding="UTf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 	
 
 <%
@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTf-8">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>

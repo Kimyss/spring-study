@@ -9,7 +9,8 @@
 
 <body>
 
-	<form action = "view/v1/save/jsp" method = "post">
+
+	<form action = "/view/v1/save.jsp" method = "post">	
 	
 		이름:<input type = "text" name = "username" />
 		
