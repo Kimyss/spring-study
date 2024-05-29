@@ -1,9 +1,15 @@
 package com.example.demo.controller;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.dto.SampleDTO;
 
 //MV*C* -> Controller : 사용자 요청처리 (비즈니스로직, 서블릿 포함하고 있어)
 @Controller
@@ -30,5 +36,41 @@ public class SampleController {
 	}
 //	model 객체에 데이터 여러번 담기 개능
 	
+	@GetMapping("/ex4")
+	public void ex4(Model model) {	//model : 파라미터 아닙니다 데이터 전달해주는놈
+		SampleDTO sampleDTO = new SampleDTO(1, "Hey", LocalDate.now());
+		
+		model.addAttribute("dto", sampleDTO);
+	}
+
+
+//	하나의 메서드가 /ex5, /ex6, /ex7, /ex8 모든 요청을 처리 
+//	각 화면에 동일한 데이터를 전달하기 위한 것
+	@GetMapping({"/ex5", "/ex6", "/ex7", "/ex8"})
+	public void ex5(Model model) {
+		List<SampleDTO> list = new ArrayList<>();
+		list.add(new SampleDTO(1, "aaa", LocalDate.now()));
+		list.add(new SampleDTO(2, "bbb", LocalDate.now()));
+		list.add(new SampleDTO(3, "ccc", LocalDate.now()));
+		
+		model.addAttribute("list", list);
+	}
+	
+	@GetMapping("/ex9")
+	public void ex9(Model model) {
+		
+		SampleDTO sampleDTO = new SampleDTO(1, "샘플디티오", LocalDate.now());
+		
+		model.addAttribute("result", "success");	//화면에 문자열 전달
+		model.addAttribute("dto", sampleDTO);		//화면에 객체 전달
+	}
+	
 
 }
+
+
+
+
+
+
+

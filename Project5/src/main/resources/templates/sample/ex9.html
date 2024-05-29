@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>인라인 기능</h1>
+	
+	<!-- 인라인 사용 전. 참고 : type="text/javascript  생략가능해요 -->
+	<script type="text/javascript">
+		var msg = [[${result}]];
+		var dto = [[${dto}]];
+	</script>
+	
+	
+	<!-- 인라인 사용 후 -->
+	<script th:inline = "javascript">
+	var msg = [[${result}]];
+	var dto = [[${dto}]];
+	
+	console.log(dto.text);
+	</script>
+
+</body>
+</html>
