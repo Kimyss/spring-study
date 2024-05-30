@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<table border='1s'>
+		<tr>
+			<th>성</th>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+		</tr>
+
+		<th:block th:each="personList:${list}" th:if="${personList.age <= 19}">
+			<tr>
+				<td>[[${#strings.substring(personList.name,0,1)}]]</td>
+				<td>[[${#strings.substring(personList.name,1,3)}]]</td>
+				<td>[[${personList.age}]]</td>
+				<td>[[${personList.address}]]</td>
+			</tr>
+		</th:block>
+
+	</table>
+
+</body>
+</html>

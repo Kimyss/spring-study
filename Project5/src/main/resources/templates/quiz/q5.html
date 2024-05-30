@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>반복문 조건문 짝수만</h2>
+	
+	<p>[[${num[0]}]]</p>
+	
+	<th:block th:each = "no:${num}" >		
+		
+		<p th:if = "${no % 2 ==0}" th:text = "${no}"></p>
+		<span th:if = "${no2 % 2 ==0}" th:text = "${no2}"></p>
+		
+	</th:block>
+
+</body>
+</html>
