@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 2. 코드 조각 던지기 -->
+<!-- th:replace : exLayout3 파일에 현재파일에 있는 조각을 전달 -->
+<!-- setContent(...) : setContent 조각의 content 변수 -->
+
+<th:block th:replace="~{/layout/exLayout3 :: setContent(~{this::content})}">
+
+    <!-- 1.조각 만들기 -->
+    <th:block th:fragment="content">
+
+        <h1>첫째조각이</h1>
+
+    </th:block>
+
+</th:block>

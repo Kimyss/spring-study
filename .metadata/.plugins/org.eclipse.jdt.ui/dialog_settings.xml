@@ -65,11 +65,11 @@
 	<section name="JavaSearchPage">
 		<item key="CASE_SENSITIVE" value="false"/>
 		<item key="INCLUDE_MASK" value="11"/>
-		<item key="HISTORY_SIZE" value="4"/>
+		<item key="HISTORY_SIZE" value="5"/>
 		<section name="HISTORY0">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="public"/>
+			<item key="pattern" value="Arraylist"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -81,7 +81,7 @@
 		<section name="HISTORY1">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="memrepository"/>
+			<item key="pattern" value="public"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -93,7 +93,7 @@
 		<section name="HISTORY2">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="memrepostory"/>
+			<item key="pattern" value="memrepository"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -103,6 +103,18 @@
 			</list>
 		</section>
 		<section name="HISTORY3">
+			<item key="searchFor" value="0"/>
+			<item key="scope" value="0"/>
+			<item key="pattern" value="memrepostory"/>
+			<item key="limitTo" value="2"/>
+			<item key="matchLocations" value="0"/>
+			<item key="javaElement" value=""/>
+			<item key="isCaseSensitive" value="false"/>
+			<item key="includeMask" value="11"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="Optional"/>
@@ -136,5 +148,16 @@
 		<item key="DIALOG_WIDTH" value="746"/>
 		<item key="DIALOG_HEIGHT" value="799"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="451"/>
+			<item key="DIALOG_Y_ORIGIN" value="190"/>
+			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		</section>
 	</section>
 </section>

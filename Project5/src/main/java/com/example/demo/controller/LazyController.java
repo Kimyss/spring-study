@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/layout")		//중간경로
 public class LazyController {
 	
-	@GetMapping({"/exLayout1","/exLayout2","/fragment2","/fragment3","/basic", "/exSidebar"})
+	@GetMapping({"/exLayout1","/exLayout2","/exLayout3", "/fragment2","/fragment3","/basic", "/exSidebar"})
 	public void ex1() {
 		
 	}
