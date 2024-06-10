@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.buildship.ui.wizard.project.import">
-		<item key="project_location" value="C:\Users\G201\git\spring-study-teacher\project06"/>
+		<item key="project_location" value="C:\Users\G201\Desktop\Test5_M"/>
 		<section name="ProjectImportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="225"/>
 			<item key="DIALOG_Y_ORIGIN" value="186"/>

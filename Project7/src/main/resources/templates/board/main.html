@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 2. 템플릿 파일에 조각 던지기 -->
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content})}">
+
+
+	<!-- 1. 조각만들기 -->
+
+	<th:block th:fragment="content">
+	
+		<h1>Main Page</h1>
+		
+	</th:block>
+
+</th:block>
+
+</html>
