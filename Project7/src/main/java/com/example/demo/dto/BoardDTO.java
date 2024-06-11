@@ -1,6 +1,6 @@
 package com.example.demo.dto;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,8 +22,8 @@ public class BoardDTO {
 	String title;
 	String content;
 	String writer;
-	LocalDate regDate;	
-	LocalDate modDate;
+	LocalDateTime regDate;	
+	LocalDateTime modDate;
 	
 //	Entity에서는 Date 상속받았으나 여기서는 작성요망
 //	Entity는 Database에 전달
