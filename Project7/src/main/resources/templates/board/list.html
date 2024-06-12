@@ -34,7 +34,7 @@
         
         <td>[[${dto.title}]]</td>
         <td>[[${dto.writer}]]</td>
-        <td>[[${#temporals.format(dto.regDate, 'yyyy.MM.dd')}]]</td>
+        <td>[[${#temporals.format(dto.regDate, 'yyyy:MM:dd')}]]</td>
         <!-- [[${변수표현식}]] {#타임리프의객체표현} -->
     </tr>
     </tbody>
@@ -45,7 +45,22 @@
 
 </th:block>
 
-<!--
+<!-- 타임리프의 인라인 속성  -->
 <script th:inline="javascript">
+
+	// doucment: html 문서를 담는 객체
+	// ready(): 문서가 로드가 될때 이벤트 처리 (basic.html의 제이쿼리문 삽입 된 덕분에 가능)
+	$(document).ready(function(){
+		
+		// 등록이 끝나고 난 후에 등록처리결과 보여주기
+		// 새로운 글의 번호를 모달창으로 출력하기
+		
+		var msg = [[${msg}]];
+		
+		if(msg != null){
+		alert(msg + "번 글이 등록 되었습니다.");
+		}
+	});
+
 </script>
--->
+

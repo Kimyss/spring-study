@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.dto.BoardDTO;
@@ -42,7 +43,7 @@ public class BoardController {
 //	등록화면을 반환하는 메소드
 	@GetMapping("/register")
 	public void registerPost() {
-		
+		System.out.println();
 	}
 	
 //	1.dto: 폼에서 전달받은 게시물정보 (파라미터)
@@ -60,6 +61,38 @@ public class BoardController {
 //		게시물 목록 화면으로 리다이렉트 하기
 //		리다이렉트? 새로운 URL을 다시 호출하는 것
 		return "redirect:/board/list";		//HTML파일X	URL주소O
+	}
+	
+	@GetMapping("/read")
+	public void read(@RequestParam(name = "no") int no, Model model) {
+//		( @~ int no = 쿼리 파라미터, 모델 )
+		
+		BoardDTO dto = service.read(no);
+		
+		model.addAttribute("dto", dto);
+	}
+	
+//	수정화면 반환메소드 - 성격이 까다로와: 상세화면 + 등록폼 수정화면을 반환 할때 게시물의 정보를 보내줘
+	@GetMapping("/modify")
+	public void modify(@RequestParam(name = "no") int no, Model model) {
+		BoardDTO dto = service.read(no);
+		model.addAttribute("dto", dto);		//화면에 특정 게시물 정보를 전달
+	}
+	
+//	수정처리 메소드
+	@PostMapping("/modify")
+	public String modifyPost(BoardDTO dto, RedirectAttributes redirectAttributes) {
+		
+		service.modify(dto);	//게시물 수정 전달받은 데이터 데이터베이스에 교체
+		
+//		addFlashAttribute(): 리다이렉트할 화면에 데이터를 보내는 함수
+//		addAttribute(): 리다이렉트 주소에 파라미터를 추가하는 함수(/board/read?no=1)
+		
+		redirectAttributes.addAttribute("no", dto.getNo());
+		
+		return "redirect:/board/read";
+		
+		
 	}
 
 }

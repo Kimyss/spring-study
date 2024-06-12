@@ -37,5 +37,21 @@ public class BoardServiceTest {
 			System.out.println(dto);
 		}
 	}
+	
+	@Test
+	public void 게시물단건조회() {
+		BoardDTO dto = service.read(2);
+		
+		System.out.println(dto);
+		
+	}
+	
+	@Test
+	public void 게시물수정() {
+		BoardDTO dto = service.read(5);
+		dto.setContent("최수정이");
+		service.modify(dto);
+	
+	}
 
 }

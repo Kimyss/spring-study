@@ -20,6 +20,12 @@ public interface BoardService {
 //	게시물 목록조회 메소드
 	List<BoardDTO> getList();	//컨트롤러로 반환시 DTO로 반환해
 	
+//	게시물 상세조회 (단건조회)
+	BoardDTO read(int no);
+	
+//	게시물 수정 메소드
+	void modify(BoardDTO dto); //매개변수로 디티오 받아서 수정후 데이타전송
+	
 	
 //	dto를 엔티티로 변환하는 메소드(일반메소드)
 //	매개변수: 엔티티, return타입: DTO
