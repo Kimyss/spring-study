@@ -79,5 +79,16 @@ public class BoardServiceImpl implements BoardService {
 
 	}
 
-}
+	@Override
+	public int remove(int no) {
+		Optional<Board> result = repository.findById(no);
 
+		if (result.isPresent()) {
+			repository.deleteById(no);
+			return 1; // 성공 참이면 1
+		} else {
+			return 0; // 실패 거짓이면 0
+		}
+	}
+
+}

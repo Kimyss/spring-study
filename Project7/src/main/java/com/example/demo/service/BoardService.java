@@ -26,6 +26,9 @@ public interface BoardService {
 //	게시물 수정 메소드
 	void modify(BoardDTO dto); //매개변수로 디티오 받아서 수정후 데이타전송
 	
+//	게시물 삭제 메소드
+	int remove(int no);		// no:  pk, 단건삭제
+	
 	
 //	dto를 엔티티로 변환하는 메소드(일반메소드)
 //	매개변수: 엔티티, return타입: DTO

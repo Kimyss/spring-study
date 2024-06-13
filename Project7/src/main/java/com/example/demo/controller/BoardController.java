@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.demo.dto.BoardDTO;
 import com.example.demo.service.BoardService;
 
+
 @Controller
 @RequestMapping("/board")		//중간경로 (폴더이름)
 public class BoardController {
@@ -90,9 +91,19 @@ public class BoardController {
 		
 		redirectAttributes.addAttribute("no", dto.getNo());
 		
+//		상세화면으로 이동
 		return "redirect:/board/read";
-		
-		
+				
 	}
+	
+//	삭제처리메소드
+	@PostMapping("/remove")
+	public String removePost(@RequestParam(name = "no") int no) {
+		
+		service.remove(no);
+		
+		return "redirect:/board/list";	//특별한 화면 구현 필요 없기에 삭제처리(이벤트) 마치고 목록화면으로 이동
+	}
+	
 
 }

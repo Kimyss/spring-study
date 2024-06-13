@@ -53,5 +53,12 @@ public class BoardServiceTest {
 		service.modify(dto);
 	
 	}
+	
+	@Test 
+	public void 게시물단건삭제() {
 
+		service.remove(2);
+		
+	}
+	
 }
