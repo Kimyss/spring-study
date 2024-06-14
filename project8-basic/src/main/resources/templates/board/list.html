@@ -24,8 +24,8 @@
 
 			<tbody>
 				<tr th:each="dto : ${list}">
-					<th>
-						<a th:href="@{/board/read(no = ${dto.no})}">[[${dto.no}]]</a> 
+					<th> <!-- @{/board/read(no = ${dto.no}, page = ${list.number+1})} 파라미터 처리부분 -->
+						<a th:href="@{/board/read(no = ${dto.no}, page = ${list.number+1})}">[[${dto.no}]]</a> 
 					</th>
 					<td>[[${dto.title}]]</td>
 					<td>[[${dto.writer}]]</td>
@@ -42,11 +42,6 @@
 		<!-- 전달받은 페이지 정보로 번호 목록 만들기 -->
 
 
-		
-		
-		[[${list.number}]]
-		
-		
 		<!-- 클릭한 페이지 번호로 이동하도록 링크 처리 -->
 		<ul class="pagination h-100 justify-content-center align-items-center">
 			<th:block th:each="page : ${#numbers.sequence(1, list.totalPages)}">
@@ -75,5 +70,10 @@
         </script>
 
 	</th:block>
+		
+		
+		
+		
+		
 
 </th:block>

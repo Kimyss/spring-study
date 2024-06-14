@@ -36,6 +36,7 @@ public class BoardController {
     	System.out.println("전체 게시물수: " + list.getTotalElements());
     	System.out.println("현재 페이지 번호: "+ list.getNumber() + 1);
     	System.out.println("페이지에 표시할 게시물 수: " + list.getNumberOfElements());
+
     	
     }
 
@@ -53,11 +54,11 @@ public class BoardController {
     }
 
     // 상세화면
-    @GetMapping("/read")
-    public void read(@RequestParam(name = "no") int no, Model model) {
-        BoardDTO dto = service.read(no);
-        model.addAttribute("dto", dto);
-    }
+//    @GetMapping("/read")
+//    public void read(@RequestParam(name = "no") int no, Model model) {
+//        BoardDTO dto = service.read(no);
+//        model.addAttribute("dto", dto);
+//    }
 
     // 수정화면
     @GetMapping("/modify")
@@ -79,6 +80,16 @@ public class BoardController {
     public String removePost(int no) {
         service.remove(no);
         return "redirect:/board/list";
+    }
+    
+    
+    @GetMapping("/read")
+    public void read(@RequestParam(name = "no") int no,
+    				 @RequestParam(defaultValue = "0", name = "page") int page,
+    				 Model model) {		//페이지 번호 파라미터 추가
+    	BoardDTO dto = service.read(no);
+		model.addAttribute("dto", dto);
+		model.addAttribute("page", page); //화면에 페이지번호 전달
     }
 
 }
