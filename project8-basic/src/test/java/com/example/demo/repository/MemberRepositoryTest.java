@@ -17,19 +17,33 @@ public class MemberRepositoryTest {
 	MemberRepository memberRepository;
 	
 	@Test
+	public void 회원하나등록() {
+		Member member = new Member("user1","1234","김스벅");
+		memberRepository.save(member);
+	}
+	
+	@Test
 	public void 회원등록() {
 		List<Member> list = new ArrayList<>();
 		
-		Member member1 = new Member("user1", "1234", "김질럿");
-		Member member2 = new Member("user2", "1234", "최둘리");
-		Member member3 = new Member("user3", "1234", "손오공");
+		Member member1 = new Member("user100", "1234", "김스벅");
+		Member member2 = new Member("user101", "1234", "최투섬");
+		Member member3 = new Member("user102", "1234", "박다방");
 		
 		list.add(member1);
 		list.add(member2);
 		list.add(member3);
 		
 		memberRepository.saveAll(list);		
-			
+	}
+	
+	@Test
+	public void 회원일괄등록() {
+		List<Member> list = new ArrayList<>();
+		for(int i=1; i<=30;i++) {
+			list.add(new Member("user"+i,"1234","둘리"));
+		}
+		memberRepository.saveAll(list);
 	}
 	
 	

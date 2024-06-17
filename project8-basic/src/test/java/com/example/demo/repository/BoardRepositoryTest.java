@@ -41,11 +41,11 @@ public class BoardRepositoryTest {
 //		타입이 Member 엔티티로 바뀌었기 때문에 멤버 엔티티 생성후에 writer에 넣어줘야해
 		
 //		회원 엔티티 생성
-		Member member = Member.builder().id("user1").build();	//user1 : 존재하는 id가아니면 오류
+		Member member = Member.builder().id("user2").build();	//user1 : 존재하는 id가아니면 오류
 		
 //		회원테이블에 없는 아이디를 사용하면 에러남\
 		Board board = Board.builder()
-						.title("게시물1").content("내용이에요내용").writer(member).build();
+						.title("게시물2").content("게시물등록").writer(member).build();
 		
 		repository.save(board);
 	}
