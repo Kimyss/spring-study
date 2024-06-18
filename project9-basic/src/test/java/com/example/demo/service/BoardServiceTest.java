@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 
 import com.example.demo.dto.BoardDTO;
+import com.example.demo.service.BoardService;
 
 @SpringBootTest
 public class BoardServiceTest {
@@ -19,7 +20,7 @@ public class BoardServiceTest {
 	public void 게시물등록() {
 
 		BoardDTO dto = BoardDTO.builder()
-				.title("안녕하세요").content("안녕하세요").writer("user1")
+				.title("음식추천").content("음식추천받아요").writer("user2")
 				.build();
 
 		int no = service.register(dto);

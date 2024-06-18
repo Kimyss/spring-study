@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.buildship.ui.wizard.project.import">
-		<item key="project_location" value="C:\Users\G201\git\spring-study-teacher\project08"/>
+		<item key="project_location" value="C:\Users\G201\git\spring-study-teacher\project09-basic"/>
 		<section name="ProjectImportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="225"/>
 			<item key="DIALOG_Y_ORIGIN" value="186"/>
-			<item key="DIALOG_WIDTH" value="574"/>
+			<item key="DIALOG_WIDTH" value="544"/>
 			<item key="DIALOG_HEIGHT" value="769"/>
 			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 		</section>
