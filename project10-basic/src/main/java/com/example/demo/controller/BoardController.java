@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -30,14 +32,19 @@ public class BoardController {
 		System.out.println("페이지에 표시할 게시물 수: " + list.getNumberOfElements());
 	}
 
+//	등록폼(등록화면)을 보여주는 메소드
 	@GetMapping("/register")
 	public void register() {
 	}
-
+	
+//	등록 처리 메소드, **Principal: 인증객체를 여기에 담아요 인증객체를 가지고 아이디를 꺼내세요
 	@PostMapping("/register")
-	public String registerPost(BoardDTO dto, RedirectAttributes redirectAttributes) {
+	public String registerPost(BoardDTO dto, RedirectAttributes redirectAttributes, Principal principal) {
+		String id = principal.getName();
+		dto.setWriter(id);
 		int no = service.register(dto);
 		redirectAttributes.addFlashAttribute("msg", no);
+		
 		return "redirect:/board/list";
 	}
 
